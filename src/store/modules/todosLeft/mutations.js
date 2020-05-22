@@ -16,9 +16,6 @@ export default {
 	},
 		
 	[UndoRedoTypes.CLEAR_STATE]: (state) => { // Service mutation of UndoRedo
-		state.todos = [
-			{ id: '312312', text: 'First of left', isCompleted: false },
-			{ id: '432423', text: 'Second of left', isCompleted: false }
-		]
+		state.todos = []
 	}
 }

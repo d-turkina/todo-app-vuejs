@@ -8,10 +8,7 @@ export default {
 		UndoRedoService: UndoRedoService()
 	},
 	state: { 
-		todos: [
-			{ id: '312312', text: 'First of left', isCompleted: false },
-			{ id: '432423', text: 'Second of left', isCompleted: false }
-		]
+		todos: []
 	},
 	mutations,
 	actions

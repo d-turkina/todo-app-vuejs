@@ -8,18 +8,12 @@ export default {
 		UndoRedoService: UndoRedoService()
 	},
 	state: { 
-		todos: [
-			{ id: '423423', text: 'First of right', isCompleted: false },
-			{ id: '542312', text: 'Second of right', isCompleted: false }
-		]
+		todos: []
 	},
 	mutations: {
 		...mutations,
 		[UndoRedoTypes.CLEAR_STATE]: (state) => { // Service mutation of UndoRedo
-			state.todos = [
-				{ id: '312312', text: 'First of right', isCompleted: false },
-				{ id: '432423', text: 'Second of right', isCompleted: false }
-			]
+			state.todos = []
 		}
 	},
 	actions
