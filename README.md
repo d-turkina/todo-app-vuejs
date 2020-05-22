@@ -1,4 +1,4 @@
-# 2105vuetodo
+# Vuejs_ToDo_App
 
 ## Project setup
 ```
@@ -13,6 +13,11 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
+```
+
+### Starts testing
+```
+npm run test:unit
 ```
 
 ### Lints and fixes files
