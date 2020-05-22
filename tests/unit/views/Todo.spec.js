@@ -19,6 +19,7 @@ describe("Todo view", () => {
 	it("is VueInstance", () => {
 		const wrapper = mount(Todo, {
 			localVue,
+			stubs: ['router-link'],
 			store: mockedStore,
 			mocks: {
 				$route: {
@@ -32,6 +33,7 @@ describe("Todo view", () => {
 	it("displays data of specific todo", () => {
 		const wrapper = mount(Todo, {
 			localVue,
+			stubs: ['router-link'],
 			store: mockedStore,
 			mocks: {
 				$route: {
@@ -47,6 +49,7 @@ describe("Todo view", () => {
 	it("displays default data if provided wrong todo id", () => {
 		const wrapper = mount(Todo, {
 			localVue,
+			stubs: ['router-link'],
 			store: mockedStore,
 			mocks: {
 				$route: {

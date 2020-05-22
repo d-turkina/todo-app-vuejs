@@ -4,12 +4,12 @@
 		<p>id - {{id}}</p>
 		<p>text - {{text}}</p>
 		<p>{{isCompleted ? `is completed`: `isn't completed`}}</p>
-		<a
-			href="/"
+		<router-link
+			to="/"
 			class="todo-info__back"
 		>
 			<span>go back</span>
-		</a>
+		</router-link>
 	</div>
 </template>
 
