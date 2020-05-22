@@ -59,6 +59,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		align-self: start;
 		max-width: 380px;
 		background-color: #FFFFFF;
 		border-radius: 5px;

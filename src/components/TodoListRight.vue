@@ -59,10 +59,11 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		align-self: start;
 		background-color: #FFFFFF;
 		border-radius: 5px;
 		box-shadow: 0 2px 10px 2px rgba(0,0,0,0.15);
-		padding: 30px;
+		padding: 15px 30px 30px 30px;
 		margin: 20px;
 	}
 	
