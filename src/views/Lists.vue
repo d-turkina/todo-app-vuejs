@@ -28,10 +28,18 @@
 		display: flex;
 		flex-direction: column;
 	}
+	
 	.lists {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		margin: 40px 0;
+	}
+
+	@media (max-width: 960px) {
+		.lists {
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 </style>

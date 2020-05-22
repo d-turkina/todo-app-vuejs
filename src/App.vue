@@ -14,5 +14,6 @@ export default {
 	body {
 		font-family: Avenir, Helvetica, Arial, sans-serif;
 		background-color: #EEEEEE;
+		margin: 0;
 	}
 </style>

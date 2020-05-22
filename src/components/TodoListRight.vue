@@ -59,7 +59,8 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-self: start;
+		height: fit-content;
+		max-width: 380px;
 		background-color: #FFFFFF;
 		border-radius: 5px;
 		box-shadow: 0 2px 10px 2px rgba(0,0,0,0.15);
@@ -93,14 +94,22 @@
 			color: #444444;
 			outline: none;
 			cursor: pointer;
+
+			&:hover {
+				background-color: #EDEDED;
+			}
 			
 			&:active {
-				transform: scale(.95);
+				transform: scale(.97);
 			}
 		}
 	}
 	
 	.todo-list-item {
 		list-style: none;
+		
+		&:hover {
+			background-color: #F2F2F2;
+		}
 	}
 </style>
