@@ -1,0 +1,105 @@
+<template>
+	<div class="todo-list-box">
+		<span class="todo-list-title">todosRight namespace</span>
+		<InputForm @submit="addTodo" />
+		<ul class="todo-list">
+			<li
+				v-for="{ id, text, isCompleted } in todos"
+				:key="id"
+				class="todo-list-item"
+			>
+				<todo-item
+					:id="id"
+					:text="text"
+					:is-completed="isCompleted"
+					@complete="markTodoAsCompleted(id)"
+					@uncomplete="markTodoAsUncompleted(id)"
+					@remove="removeTodo(id)"
+				/>
+			</li>
+		</ul>
+		<div class="todo-list-actions">
+			<a @click.prevent="undo" class="todo-list__action">undo</a>
+			<a @click.prevent="redo" class="todo-list__action">redo</a>
+		</div>
+	</div>
+</template>
+
+<script>
+	import { mapState, mapActions } from 'vuex';
+	import InputForm from '../components/InputForm';
+	import TodoItem from './TodoItem';
+	
+	export default {
+		name: 'TodoListRight',
+		components: {
+			InputForm,
+			TodoItem
+		},
+		computed: {
+			...mapState({
+				todos: state => state.todosRight.todos
+			})
+		},
+		methods: {
+			...mapActions({
+				markTodoAsCompleted: 'todosRight/markTodoAsCompleted',
+				markTodoAsUncompleted: 'todosRight/markTodoAsUncompleted',
+				removeTodo: 'todosRight/removeTodo',
+				undo: 'todosRight/undo',
+				redo: 'todosRight/redo',
+				addTodo: 'todosRight/addTodo'
+			})
+		}
+	}
+</script>
+
+<style scoped lang="scss">
+	.todo-list-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		background-color: #FFFFFF;
+		border-radius: 5px;
+		box-shadow: 0 2px 10px 2px rgba(0,0,0,0.15);
+		padding: 30px;
+		margin: 20px;
+	}
+	
+	.todo-list {
+		padding: 0;
+		
+		&-title {
+			font-size: 24px;
+			color: #444444;
+			text-align: center;
+			margin: 15px;
+		}
+		
+		&-actions {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			user-select: none;
+		}
+
+		&__action {
+			margin: 10px;
+			border: 1px solid #EEEEEE;
+			border-radius: 3px;
+			font-size: 24px;
+			padding: 10px;
+			color: #444444;
+			outline: none;
+			cursor: pointer;
+			
+			&:active {
+				transform: scale(.95);
+			}
+		}
+	}
+	
+	.todo-list-item {
+		list-style: none;
+	}
+</style>
